@@ -14,7 +14,7 @@ int main() {
     int matrixA[MAX_SIZE][MAX_SIZE], matrixB[MAX_SIZE][MAX_SIZE], result[MAX_SIZE][MAX_SIZE];
     int size;
 
-    readMatricesFromFile(matrixA, matrixB, size, "input.txt");
+    readMatricesFromFile(matrixA, matrixB, size, "matrix_input.txt");
 
     std::cout << "Your name" << std::endl;
     std::cout << "Lab #6: Matrix manipulation" << std::endl;
