@@ -2,8 +2,10 @@
 #include <fstream>
 #include <iomanip>
 
+// Matrices can be up to 100 in size
 const int MAX_SIZE = 100;
 
+// Prototype functions
 void readMatricesFromFile(int matrixA[MAX_SIZE][MAX_SIZE], int matrixB[MAX_SIZE][MAX_SIZE], int& size, const char* filename);
 void printMatrix(const int matrix[MAX_SIZE][MAX_SIZE], int size);
 void addMatrices(const int matrix1[MAX_SIZE][MAX_SIZE], const int matrix2[MAX_SIZE][MAX_SIZE], int result[MAX_SIZE][MAX_SIZE], int size);
@@ -11,11 +13,14 @@ void multiplyMatrices(const int matrix1[MAX_SIZE][MAX_SIZE], const int matrix2[M
 void subtractMatrices(const int matrix1[MAX_SIZE][MAX_SIZE], const int matrix2[MAX_SIZE][MAX_SIZE], int result[MAX_SIZE][MAX_SIZE], int size);
 
 int main() {
+    // Initialize variables
     int matrixA[MAX_SIZE][MAX_SIZE], matrixB[MAX_SIZE][MAX_SIZE], result[MAX_SIZE][MAX_SIZE];
     int size;
 
+    // File reading
     readMatricesFromFile(matrixA, matrixB, size, "matrix_input.txt");
 
+    // Calling functions and pretty formatting
     std::cout << "Tuan Vu" << std::endl;
     std::cout << "Lab #6: Matrix manipulation" << std::endl;
 
@@ -40,6 +45,7 @@ int main() {
     return 0;
 }
 
+// Function for reading from file
 void readMatricesFromFile(int matrixA[MAX_SIZE][MAX_SIZE], int matrixB[MAX_SIZE][MAX_SIZE], int& size, const char* filename) {
     std::ifstream inputFile(filename);
     if (!inputFile) {
@@ -47,7 +53,7 @@ void readMatricesFromFile(int matrixA[MAX_SIZE][MAX_SIZE], int matrixB[MAX_SIZE]
         exit(1);
     }
 
-    inputFile >> size;
+    inputFile >> size; // Reads the size 
 
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
@@ -64,6 +70,7 @@ void readMatricesFromFile(int matrixA[MAX_SIZE][MAX_SIZE], int matrixB[MAX_SIZE]
     inputFile.close();
 }
 
+// Function for printing matrices in a pretty formatt
 void printMatrix(const int matrix[MAX_SIZE][MAX_SIZE], int size) {
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
@@ -73,6 +80,7 @@ void printMatrix(const int matrix[MAX_SIZE][MAX_SIZE], int size) {
     }
 }
 
+// Function for adding matrices
 void addMatrices(const int matrix1[MAX_SIZE][MAX_SIZE], const int matrix2[MAX_SIZE][MAX_SIZE], int result[MAX_SIZE][MAX_SIZE], int size) {
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
@@ -81,6 +89,7 @@ void addMatrices(const int matrix1[MAX_SIZE][MAX_SIZE], const int matrix2[MAX_SI
     }
 }
 
+// Function for multiplying matrices
 void multiplyMatrices(const int matrix1[MAX_SIZE][MAX_SIZE], const int matrix2[MAX_SIZE][MAX_SIZE], int result[MAX_SIZE][MAX_SIZE], int size) {
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
@@ -92,6 +101,7 @@ void multiplyMatrices(const int matrix1[MAX_SIZE][MAX_SIZE], const int matrix2[M
     }
 }
 
+// Function for subtracting matrices
 void subtractMatrices(const int matrix1[MAX_SIZE][MAX_SIZE], const int matrix2[MAX_SIZE][MAX_SIZE], int result[MAX_SIZE][MAX_SIZE], int size) {
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
