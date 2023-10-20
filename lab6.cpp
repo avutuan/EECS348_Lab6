@@ -16,7 +16,7 @@ int main() {
 
     readMatricesFromFile(matrixA, matrixB, size, "matrix_input.txt");
 
-    std::cout << "Your name" << std::endl;
+    std::cout << "Tuan Vu" << std::endl;
     std::cout << "Lab #6: Matrix manipulation" << std::endl;
 
     std::cout << "\nMatrix A:" << std::endl;
@@ -42,8 +42,8 @@ int main() {
 
 void readMatricesFromFile(int matrixA[MAX_SIZE][MAX_SIZE], int matrixB[MAX_SIZE][MAX_SIZE], int& size, const char* filename) {
     std::ifstream inputFile(filename);
-    if (!inputFile.is_open()) {
-        std::cerr << "Error: Unable to open the input file." << std::endl;
+    if (!inputFile) {
+        std::cerr << "File open error: " << filename << std::endl;
         exit(1);
     }
 
